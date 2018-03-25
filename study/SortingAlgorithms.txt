@@ -1,0 +1,70 @@
+Sorting Algorithms
+
+list: A list of elements E.
+size: The number of E in list.
+count: size-1, the last index in list.
+i,j,k: indexes of E in L.
+
+---------------------------
+Bubble sort algorithm
+swapped: A flag.
+
+do
+	swapped = false
+	for i = 0; i < count; ++i do
+		if Ei > Ei+1 then
+			swap Ei with Ei+1
+			swapped = true
+while swapped
+
+---------------------------
+Selection sort algorithm
+max: index of the current maximum E.
+
+for i = 0; i < count; ++i do
+	max = i
+	for j = i+1; j <= count; ++j do
+		if Emax > Ej then
+			max = j
+	if max != i then
+		swap Emax with Ei
+
+---------------------------
+Insertion sort algorithm
+
+for i = 0; i < count; ++i do
+	j = i+1
+	while j > 0 and Ej-1 > Ej do
+		swap Ej with Ej+1
+		--j
+
+---------------------------
+Quick sort algorithm
+lo: Lowest index in list
+hi: Highest index in list
+mid: Middle index in list
+pivot: Pivot index
+
+partition(list, lo, hi)
+    pivot = list[lo]
+    i = lo - 1
+    j = hi + 1
+    loop forever
+        do
+            i = i + 1
+        while list[i] < pivot
+        
+        do
+            j = j - 1
+        while list[j] > pivot
+        
+        if i >= j then
+            return j
+        
+        swap list[i] with list[j]
+
+quicksort(list, lo, hi)
+    if lo < hi then
+        mid = partition(list, lo, hi)
+        quicksort(list, lo, mid)
+        quicksort(list, mid + 1, hi)

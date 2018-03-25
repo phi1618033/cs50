@@ -1,0 +1,12 @@
+0.  According to Oxford English Dictionary, It is an artificial long word said to mean a lung disease known as silicosis caused by inhaling very fine ash and sand dust.
+1.  According to man page, getrusage returns resource usage measures/statistics for a process or thread.
+2.  According to man page, 16 members are in a variable of type struct rusage. 
+3.  before and after are passed by reference because the signature of getrusage requires a pointer of type struct rusage to edit the same variables and not a copy of them. 
+4.  First of all, main keeps track of the index of each character in a word with index, counts the number of misspelled words with misspellings and counts the number of words with words.
+The text is read one character at a time till the end of the file (EOF). A word is made of only alphabetical characters and apostrophes (no strings with numbers). Each character c is read and written to word. When a string longer than LENGTH is found or an alphanumeric string is found, it is read till the next whitespace and discarded (not spell checked). A valid word is terminated with a '\0' and spell checked. Spell checking is benchmarked, words and misspellings are increased and the loop searches for a new string. The process is repeated till the end of a file.
+5.  With fscanf, we may read a string longer than LENGTH and suffer from buffer overflow and we will have to read a string and check it for only alphabetical characters and apostrophes which brings an overhead.
+6.  You declared parameters for check and load constant because you don't want their value and reference (memory address) to be change by these functions.
+7.  The data structure I used to implement my spell-checker is a hash table. It is an array of pointers with each 		pointer being the head of a linked list. The linked list is made of node; each node is composed of a string (for a word) and a pointer to the next node in the list. It is like a shelf with many rows and each row has an index number.
+8.  The first time I got it working, my code was about 9 times slower than my actual code.
+9.  Firstly, I used the basic hash function from study.cs50.net. I changed it to FNV1a which is a non-cryptographic hash algorithm. I used the implementation from Georgi at http://encode.ru/threads/612-Fastest-decompressor!?p=22184&viewfull=1#post22184 and set the table size to 250423. After those changes, I gained about 5.30 seconds in total time.
+10. From the requirements, check50 and valgrind, no. 

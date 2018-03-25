@@ -1,0 +1,29 @@
+0.  BMP supports up to 4 billion, GIF supports up to 256, JPEG supports up to 16 million, 
+    and PNG supports up to 4 billion different colors.
+1.  Only GIF supports animation.
+2.  Lossy compression techniques reduce the size of the image file to the expense of the image quality 
+    (level of details). Images compressed with lossy techniques are degraded and it is irreversible.
+    On the other hand, loss-less compression techniques reduce the image size whilst keeping the image quality.
+    Compression is reversible and the quality of image stays intact.
+    The size ratio for lossy techniques is higher than that of loss-less techniques.
+3.  JPEG is the lossy compressed image file format among them.
+4.  When a file is deleted on a FAT file system, its reference is removed from the containing directory and the blocks
+    containing the file's data are placed on the free list (marked as free).
+5.  To ensure with high probability that my deleted files are unrecoverable, I would use sanitization tools (disk 
+    sanitizers), for example the dd command(write zeroes to the disk) with the shred command (overwrite the disk with random bits) on UNIX-like operating systems to sanitize the disk.
+6.  stdint.h is header file in the C standard library that provides exact width integer data types such as uint8_t for greater portability.
+7.  The point of using stdint.h data types is portability because those data types have an exact, clear range with no ambiguity for computer systems.
+    So these data types will be interpreted the same way on an IBM mainframe as on a RaspberryPi unlike the simple int data type whose range might 
+    change from one system to another.
+8.  A BYTE is 1 byte, a DWORD is 4 bytes, a LONG is 4 bytes, and a WORD is 2 bytes.
+9.  The first two bytes of a BMP file in decimal are 0x42 and 0x4d.
+10. bfSize is the size in bytes of the bitmap file and biSize is the number of bytes for the BITMAPINFOHEADER.
+11. biHeight negative means that the bitmap is a top-down DIB and its origin is the upper-left corner (the image is up-right).
+12. It is the biBitCount field.
+13. fopen might return NULL if there isn't enough memory to open the file or the file does not exist.
+14. The third argument to fread is always 1 in our code because according to the size of our element BITMAPFILEHEADER or BITMAPINFOHEADER which are 
+    structs, we are reading one instance of the element. After all, there is only one BITMAPFILEHEADER and BITMAPINFOHEADER per BMP file.
+15. If biWidth is 3, padding will hold the value of 1.
+16. fseek helps reposition a pointer in a file stream.
+17. SEEk_CUR identifies the current position of the pointer for fseek.
+18. The face of somebody I don't know, smiling.

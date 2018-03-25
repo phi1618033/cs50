@@ -1,0 +1,35 @@
+Searching Algorithms
+
+list: A list of elements E.
+N: The number of E in list.
+n: N-1, the last index in list.
+i,j,k: indexes of E in list.
+y: The searched element.
+
+---------------------------
+Linear search algorithm
+m: An index of E in list.
+
+linearSearch(y, list)
+	for each i in list from 0 to n do
+		if list[i] = y then
+			return i
+	return -1
+
+---------------------------
+Binary search algorithm
+m: An index of E in list.
+
+binarySearch(y, list, min, max)
+	if max<min
+		return -1
+	else
+		set m to (min+max)/2;
+
+	if list[m] > y then
+		binarySearch(y, list, min, m)
+	else if list[m] < y them
+		binarySearch(y, list, m+1, max)
+	else
+		return list[m]
+
